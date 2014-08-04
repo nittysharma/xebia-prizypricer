@@ -52,10 +52,6 @@ Additional features
 
 
 
+please call me in case any difficulty
 
-
-
-
-
-
-Search with barcode hasno
+9015910833

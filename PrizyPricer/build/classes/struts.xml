@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name="default" extends="struts-default">
+        <action name="login" class="com.xebia.prizypricer.action.LoginAction" method="loginCheck">
+            <result name="admin">/AdminWelcome.jsp</result>
+                        <result name="worker">/WorkerWelcome.jsp</result>
+            <result name="input">/index.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+         <action name="logout" class="com.xebia.prizypricer.action.Listiner" method="updateLogout">
+            <result name="success" type="redirect">/index.jsp</result>
+        </action>
+        <action name="getproductlist" class="com.xebia.prizypricer.action.ProductAction" method="getProductList">
+                      <result>/WorkerWelcome.jsp</result>
+        </action>
+           <action name="getProductbyBarcode" class="com.xebia.prizypricer.action.ProductAction" method="getProductList">
+            <result name="success" type="xslt">/WorkerWelcome.jsp</result>
+        </action>
+           <action name="getStoreList" class="com.xebia.prizypricer.action.StoreAction" method="getStoreList">
+            <result name="success">/storelist.jsp</result>
+        </action>
+          <action name="savesurvay" class="com.xebia.prizypricer.action.ProductSurvayAction" method="saveSurvay">
+            <result name="success" type="chain">getproductlist</result>
+        </action>
+    </package>
+</struts>
